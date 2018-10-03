@@ -9,22 +9,7 @@ ysen=c()
 for(i in 1:length(x)){
   ysen[i]=sin(x[i])
 }
-n=10
-aux=91/n
-y1=c()
-aux1=0
-sum=0
-for(i in 1:n){
-  if(i==n){
-    y1[i]=abs(ysen[i*aux]+0)
-  }else{
-    y1[i]=abs(ysen[i*aux]+ysen[(i+1)*aux])
-  }
-   aux1=((y1[i]/2)*aux)*0.07
-  print(aux1)
-  sum=(sum+aux1)
-}
-print(sum)
+
 seg <- seq.int(0, 9, length.out = 9)
 segcos <- seq.int(0, 9, length.out = 9)
 
@@ -58,3 +43,19 @@ ggplot(data = df) +
   geom_segment(aes(x=xendcos, y=ycos, xend=xendcos, yend=yendcos)) + 
   geom_ribbon(aes(x=xendcos, ymin=ycos, ymax=yendcos), fill = 'blue', alpha = 0.3) +
   xlim(c(0, 9))
+n=10
+aux=91/n
+y1=c()
+aux1=0
+sum=0
+for(i in 1:n){
+  if(i==n){
+    y1[i]=abs(ysen[i*aux]+0)
+  }else{
+    y1[i]=abs(ysen[i*aux]+ysen[(i+1)*aux])
+  }
+   aux1=((y1[i]/2)*aux)*0.07
+  print(aux1)
+  sum=(sum+aux1)
+}
+print(sum)
