@@ -1,3 +1,4 @@
+library("ggplot2")
 f3 <- function(x) {
   return(sin(x))
 }
